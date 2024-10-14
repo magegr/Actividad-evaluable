@@ -8,16 +8,19 @@
     
     <?php
      if ($_SERVER["REQUEST_MOTHOD"] == "POST"){
-        $numero= $_POST["num"];
-
-        if ($numero%2 == 0){
-            echo "El numero es par";
-
-        }else{
-                echo "El numero es impar";
+        $num= $_POST["num"];
+        while ($num > 1){ 
+            if (($num%2)== 0){
+            echo "El numero es par" . $num;
+            $num= $num/2;
+            $num=++;
+                }else{
+                    $num = $num*3 + 1;
+                    echo "El numero es impar" . $num;
             }
 
-     }  
+         } 
+        } 
     ?>
     
     <form method="POST" action="">
